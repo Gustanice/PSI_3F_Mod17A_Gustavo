@@ -291,7 +291,7 @@ namespace Contact {
             
             private global::System.Data.DataColumn columnClient;
             
-            private global::System.Data.DataColumn columnLastcall;
+            private global::System.Data.DataColumn columnLastCall;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -376,9 +376,9 @@ namespace Contact {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LastcallColumn {
+            public global::System.Data.DataColumn LastCallColumn {
                 get {
-                    return this.columnLastcall;
+                    return this.columnLastCall;
                 }
             }
             
@@ -419,7 +419,7 @@ namespace Contact {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PeopleRow AddPeopleRow(string Name, string Company, string Telephone, string Email, bool Client, System.DateTime Lastcall) {
+            public PeopleRow AddPeopleRow(string Name, string Company, string Telephone, string Email, bool Client, System.DateTime LastCall) {
                 PeopleRow rowPeopleRow = ((PeopleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -428,7 +428,7 @@ namespace Contact {
                         Telephone,
                         Email,
                         Client,
-                        Lastcall};
+                        LastCall};
                 rowPeopleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPeopleRow);
                 return rowPeopleRow;
@@ -464,7 +464,7 @@ namespace Contact {
                 this.columnTelephone = base.Columns["Telephone"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnClient = base.Columns["Client"];
-                this.columnLastcall = base.Columns["Lastcall"];
+                this.columnLastCall = base.Columns["LastCall"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -482,8 +482,8 @@ namespace Contact {
                 base.Columns.Add(this.columnEmail);
                 this.columnClient = new global::System.Data.DataColumn("Client", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnClient);
-                this.columnLastcall = new global::System.Data.DataColumn("Lastcall", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastcall);
+                this.columnLastCall = new global::System.Data.DataColumn("LastCall", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastCall);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnContactID}, true));
                 this.columnContactID.AutoIncrement = true;
@@ -729,17 +729,17 @@ namespace Contact {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Lastcall {
+            public System.DateTime LastCall {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePeople.LastcallColumn]));
+                        return ((global::System.DateTime)(this[this.tablePeople.LastCallColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Lastcall\' na tabela \'People\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'LastCall\' na tabela \'People\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePeople.LastcallColumn] = value;
+                    this[this.tablePeople.LastCallColumn] = value;
                 }
             }
             
@@ -805,14 +805,14 @@ namespace Contact {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLastcallNull() {
-                return this.IsNull(this.tablePeople.LastcallColumn);
+            public bool IsLastCallNull() {
+                return this.IsNull(this.tablePeople.LastCallColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLastcallNull() {
-                this[this.tablePeople.LastcallColumn] = global::System.Convert.DBNull;
+            public void SetLastCallNull() {
+                this[this.tablePeople.LastCallColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -981,11 +981,11 @@ namespace Contact.ContactDBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Telephone", "Telephone");
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Client", "Client");
-            tableMapping.ColumnMappings.Add("Lastcall", "Lastcall");
+            tableMapping.ColumnMappings.Add("LastCall", "LastCall");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[People] WHERE (([ContactID] = @Original_ContactID) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Company = 1 AND [Company] IS NULL) OR ([Company] = @Original_Company)) AND ((@IsNull_Telephone = 1 AND [Telephone] IS NULL) OR ([Telephone] = @Original_Telephone)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Client = 1 AND [Client] IS NULL) OR ([Client] = @Original_Client)) AND ((@IsNull_Lastcall = 1 AND [Lastcall] IS NULL) OR ([Lastcall] = @Original_Lastcall)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[People] WHERE (([ContactID] = @Original_ContactID) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Company = 1 AND [Company] IS NULL) OR ([Company] = @Original_Company)) AND ((@IsNull_Telephone = 1 AND [Telephone] IS NULL) OR ([Telephone] = @Original_Telephone)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Client = 1 AND [Client] IS NULL) OR ([Client] = @Original_Client)) AND ((@IsNull_LastCall = 1 AND [LastCall] IS NULL) OR ([LastCall] = @Original_LastCall)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContactID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContactID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -998,30 +998,30 @@ namespace Contact.ContactDBDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Client", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Lastcall", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastcall", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lastcall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastcall", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastCall", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastCall", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastCall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastCall", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[People] ([Name], [Company], [Telephone], [Email], [Client], [Lastcall]) VALUES (@Name, @Company, @Telephone, @Email, @Client, @Lastcall);
-SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People WHERE (ContactID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[People] ([Name], [Company], [Telephone], [Email], [Client], [LastCall]) VALUES (@Name, @Company, @Telephone, @Email, @Client, @LastCall);
+SELECT ContactID, Name, Company, Telephone, Email, Client, LastCall FROM People WHERE (ContactID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Company", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Company", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Client", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lastcall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastcall", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastCall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastCall", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[People] SET [Name] = @Name, [Company] = @Company, [Telephone] = @Telephone, [Email] = @Email, [Client] = @Client, [Lastcall] = @Lastcall WHERE (([ContactID] = @Original_ContactID) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Company = 1 AND [Company] IS NULL) OR ([Company] = @Original_Company)) AND ((@IsNull_Telephone = 1 AND [Telephone] IS NULL) OR ([Telephone] = @Original_Telephone)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Client = 1 AND [Client] IS NULL) OR ([Client] = @Original_Client)) AND ((@IsNull_Lastcall = 1 AND [Lastcall] IS NULL) OR ([Lastcall] = @Original_Lastcall)));
-SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People WHERE (ContactID = @ContactID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[People] SET [Name] = @Name, [Company] = @Company, [Telephone] = @Telephone, [Email] = @Email, [Client] = @Client, [LastCall] = @LastCall WHERE (([ContactID] = @Original_ContactID) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Company = 1 AND [Company] IS NULL) OR ([Company] = @Original_Company)) AND ((@IsNull_Telephone = 1 AND [Telephone] IS NULL) OR ([Telephone] = @Original_Telephone)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Client = 1 AND [Client] IS NULL) OR ([Client] = @Original_Client)) AND ((@IsNull_LastCall = 1 AND [LastCall] IS NULL) OR ([LastCall] = @Original_LastCall)));
+SELECT ContactID, Name, Company, Telephone, Email, Client, LastCall FROM People WHERE (ContactID = @ContactID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Company", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Company", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Client", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lastcall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastcall", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastCall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastCall", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ContactID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ContactID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1033,8 +1033,8 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Client", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Lastcall", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastcall", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lastcall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastcall", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastCall", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastCall", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastCall", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastCall", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ContactID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ContactID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1051,7 +1051,7 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM dbo.Peop" +
+            this._commandCollection[0].CommandText = "SELECT ContactID, Name, Company, Telephone, Email, Client, LastCall FROM dbo.Peop" +
                 "le";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -1113,7 +1113,7 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ContactID, string Original_Name, string Original_Company, string Original_Telephone, string Original_Email, global::System.Nullable<bool> Original_Client, global::System.Nullable<global::System.DateTime> Original_Lastcall) {
+        public virtual int Delete(int Original_ContactID, string Original_Name, string Original_Company, string Original_Telephone, string Original_Email, global::System.Nullable<bool> Original_Client, global::System.Nullable<global::System.DateTime> Original_LastCall) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ContactID));
             if ((Original_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1155,9 +1155,9 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Lastcall.HasValue == true)) {
+            if ((Original_LastCall.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Lastcall.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_LastCall.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
@@ -1183,7 +1183,7 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string Company, string Telephone, string Email, global::System.Nullable<bool> Client, global::System.Nullable<global::System.DateTime> Lastcall) {
+        public virtual int Insert(string Name, string Company, string Telephone, string Email, global::System.Nullable<bool> Client, global::System.Nullable<global::System.DateTime> LastCall) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1214,8 +1214,8 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Lastcall.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Lastcall.Value));
+            if ((LastCall.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(LastCall.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -1240,7 +1240,7 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Company, string Telephone, string Email, global::System.Nullable<bool> Client, global::System.Nullable<global::System.DateTime> Lastcall, int Original_ContactID, string Original_Name, string Original_Company, string Original_Telephone, string Original_Email, global::System.Nullable<bool> Original_Client, global::System.Nullable<global::System.DateTime> Original_Lastcall, int ContactID) {
+        public virtual int Update(string Name, string Company, string Telephone, string Email, global::System.Nullable<bool> Client, global::System.Nullable<global::System.DateTime> LastCall, int Original_ContactID, string Original_Name, string Original_Company, string Original_Telephone, string Original_Email, global::System.Nullable<bool> Original_Client, global::System.Nullable<global::System.DateTime> Original_LastCall, int ContactID) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1271,8 +1271,8 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Lastcall.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Lastcall.Value));
+            if ((LastCall.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(LastCall.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -1318,9 +1318,9 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_Lastcall.HasValue == true)) {
+            if ((Original_LastCall.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Lastcall.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_LastCall.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
@@ -1347,8 +1347,8 @@ SELECT ContactID, Name, Company, Telephone, Email, Client, Lastcall FROM People 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string Company, string Telephone, string Email, global::System.Nullable<bool> Client, global::System.Nullable<global::System.DateTime> Lastcall, int Original_ContactID, string Original_Name, string Original_Company, string Original_Telephone, string Original_Email, global::System.Nullable<bool> Original_Client, global::System.Nullable<global::System.DateTime> Original_Lastcall) {
-            return this.Update(Name, Company, Telephone, Email, Client, Lastcall, Original_ContactID, Original_Name, Original_Company, Original_Telephone, Original_Email, Original_Client, Original_Lastcall, Original_ContactID);
+        public virtual int Update(string Name, string Company, string Telephone, string Email, global::System.Nullable<bool> Client, global::System.Nullable<global::System.DateTime> LastCall, int Original_ContactID, string Original_Name, string Original_Company, string Original_Telephone, string Original_Email, global::System.Nullable<bool> Original_Client, global::System.Nullable<global::System.DateTime> Original_LastCall) {
+            return this.Update(Name, Company, Telephone, Email, Client, LastCall, Original_ContactID, Original_Name, Original_Company, Original_Telephone, Original_Email, Original_Client, Original_LastCall, Original_ContactID);
         }
     }
     

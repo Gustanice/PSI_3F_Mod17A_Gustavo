@@ -19,7 +19,7 @@ namespace Contact
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Contact List 1.0.\nWritten by: Gustavo", "About");
+            MessageBox.Show("Contact List 1.0. \nWritten by: Gustavo", "About");
         }
 
         private void peopleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -36,6 +36,5 @@ namespace Contact
             this.peopleTableAdapter.Fill(this.contactDBDataSet.People);
 
         }
-
     }
 }
