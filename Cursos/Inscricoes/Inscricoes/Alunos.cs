@@ -31,5 +31,11 @@ namespace Inscricoes
             this.alunosTableAdapter.Fill(this.database1DataSet.Alunos);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 myform = new Form1(); 
+         myform.Show();
+        }
     }
 }
